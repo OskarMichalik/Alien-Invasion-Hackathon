@@ -19,7 +19,6 @@
   z-index: 10;
   font-family: "News Gothic", Arial, sans-serif;
   text-align: center;
-  user-select: none;
   width: 30%;
   text-align: left;
 }
@@ -32,7 +31,6 @@
   z-index: 10;
   font-family: "News Gothic", Arial, sans-serif;
   text-align: center;
-  user-select: none;
   width: 30%;
   text-align: left;
 }

@@ -1,0 +1,12 @@
+.listQuestionsDiv {
+}
+.questionsDiv {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.hoverPointer {
+  cursor: pointer;
+}

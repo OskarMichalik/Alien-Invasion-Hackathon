@@ -18,4 +18,6 @@
 .headerDiv img {
   width: 60px;
   height: 60px;
+  user-select: none;
+  -webkit-user-drag: none;
 }

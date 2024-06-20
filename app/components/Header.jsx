@@ -4,17 +4,11 @@ import classes from "./Header.module.css";
 import logo from "@/public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Button from "./Button";
 
 export default function Header() {
   const { scrollY } = useScroll();
   const yValue = useTransform(scrollY, [0, 350, 500], [0, 0, -100]);
-  //add main if on different website
-  const router = useRouter();
-
-  function changeWebSite(website) {
-    router.push(`/${website}`);
-  }
 
   return (
     <motion.div className={classes.headerDiv} style={{ y: yValue }}>
@@ -22,10 +16,11 @@ export default function Header() {
         <Image src={logo} alt="Alien logo" />
       </Link>
       <nav>
-        <button>Safezones</button>
-        <button className="empty" onClick={() => changeWebSite("chat")}>
+        <Button link="">Home</Button>
+        <Button link="safezones">Safezones</Button>
+        <Button link="chat" isEmpty>
           Get Help
-        </button>
+        </Button>
       </nav>
     </motion.div>
   );

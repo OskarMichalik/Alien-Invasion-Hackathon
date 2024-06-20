@@ -10,12 +10,12 @@ export default function History() {
   const { scrollY } = useScroll();
   const yValue1 = useTransform(
     scrollY,
-    [0, 1000, 1100, 1600, 1900],
+    [0, 1000, 1200, 1600, 1900],
     [0, 0, 1, 1, 0]
   );
   const yValue2 = useTransform(
     scrollY,
-    [0, 1050, 1150, 1650, 1950],
+    [0, 1050, 1250, 1650, 1950],
     [0, 0, 1, 1, 0]
   );
 

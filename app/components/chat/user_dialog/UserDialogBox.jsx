@@ -1,11 +1,11 @@
 import classes from "./UserDialogBox.module.css";
-import { useState } from "react";
-import TalkBubble from "./TalkBubble";
+import ListQuestions from "./ListQuestions";
 
 export default function UserDialogBox({
   selectedPlace,
   setSelectedPlace,
   setDialog,
+  setLoudText,
 }) {
   function changePlace(place) {
     setDialog("");
@@ -40,24 +40,18 @@ export default function UserDialogBox({
         </>
       )}
       {selectedPlace === "military_camp" && (
-        <>
-          <p>
-            <i>Ask a soldier</i>
-          </p>
-          <p
-            className={classes.hoverPointer}
-            onClick={() => setDialog("what_happend_soldier")}
-          >
-            &gt; What happend?
-          </p>
-          <p
-            className={classes.hoverPointer}
-            onClick={() => setDialog("is_this_place_safe_soldier")}
-          >
-            &gt; Is this place safe?
-          </p>
-          <p className={classes.hoverPointer}>&gt; Speak louder</p>
-        </>
+        <ListQuestions
+          setDialog={setDialog}
+          selectedPlace={selectedPlace}
+          setLoudText={setLoudText}
+        />
+      )}
+      {selectedPlace === "hospital" && (
+        <ListQuestions
+          setDialog={setDialog}
+          selectedPlace={selectedPlace}
+          setLoudText={setLoudText}
+        />
       )}
     </div>
   );

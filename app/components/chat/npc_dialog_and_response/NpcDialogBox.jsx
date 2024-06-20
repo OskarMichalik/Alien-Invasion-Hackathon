@@ -1,13 +1,18 @@
 import classes from "./NpcDialogBox.module.css";
-import Image from "next/image";
-import soldier from "@/public/soldier_icon_transparent.png";
-import doctor from "@/public/doctor_icon_transparent.png";
 import ResponseBox from "./ResponseBox";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import DisplayBackground from "./DisplayBackground";
 import CharacterIcon from "./CharacterIcon";
 
-export default function NpcDialogBox({ selectedPlace, dialogId, loudText }) {
+export default function NpcDialogBox({
+  selectedPlace,
+  dialogId,
+  loudText,
+  battlefieldProgress,
+  playerHealth,
+  alienHealth,
+  alienStatus,
+}) {
   return (
     <div className={classes.npcDialogBoxDiv}>
       {selectedPlace === "military_camp" && (
@@ -26,19 +31,45 @@ export default function NpcDialogBox({ selectedPlace, dialogId, loudText }) {
           <DisplayBackground selectedPlace={selectedPlace} />
         </AnimatePresence>
       )}
-      {selectedPlace === "military_camp" && (
+      {selectedPlace === "battlefield" && (
         <AnimatePresence>
-          <CharacterIcon selectedPlace={selectedPlace} />
+          <DisplayBackground selectedPlace={selectedPlace} />
         </AnimatePresence>
+      )}
+      {selectedPlace === "military_camp" && (
+        <CharacterIcon selectedPlace={selectedPlace} />
       )}
       {selectedPlace === "hospital" && (
-        <AnimatePresence>
-          <CharacterIcon selectedPlace={selectedPlace} />
-        </AnimatePresence>
+        <CharacterIcon selectedPlace={selectedPlace} />
       )}
       <AnimatePresence>
-        {selectedPlace && dialogId && (
-          <ResponseBox dialogId={dialogId} loudText={loudText} />
+        {selectedPlace === "battlefield" && battlefieldProgress === "" && (
+          <CharacterIcon
+            selectedPlace={selectedPlace}
+            battlefieldProgress={battlefieldProgress}
+          />
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedPlace === "battlefield" &&
+          battlefieldProgress === "battle" &&
+          alienHealth > 0 && (
+            <CharacterIcon
+              selectedPlace={selectedPlace}
+              battlefieldProgress={battlefieldProgress}
+            />
+          )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedPlace && (dialogId || battlefieldProgress === "battle") && (
+          <ResponseBox
+            dialogId={dialogId}
+            loudText={loudText}
+            battlefieldProgress={battlefieldProgress}
+            playerHealth={playerHealth}
+            alienHealth={alienHealth}
+            alienStatus={alienStatus}
+          />
         )}
       </AnimatePresence>
     </div>

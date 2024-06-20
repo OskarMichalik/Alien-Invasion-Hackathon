@@ -28,3 +28,21 @@
   user-select: none;
   -webkit-user-drag: none;
 }
+@media screen and (max-width: 1500px) {
+  .spacetecAdDiv {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .spacetecAdDiv {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .leftDiv {
+    width: 100%;
+  }
+  .rightDiv {
+    display: none;
+  }
+}

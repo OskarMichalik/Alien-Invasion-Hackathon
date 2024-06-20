@@ -1,11 +1,20 @@
 import classes from "./UserDialogBox.module.css";
 import ListQuestions from "./ListQuestions";
+import SelectLocation from "./SelectLocation";
 
 export default function UserDialogBox({
   selectedPlace,
   setSelectedPlace,
   setDialog,
   setLoudText,
+  loudText,
+  battlefieldProgress,
+  setBattlefieldProgress,
+  setAlienHealth,
+  setPlayerHealth,
+  setSlienStatus,
+  alienHealth,
+  playerHealth,
 }) {
   function changePlace(place) {
     setDialog("");
@@ -25,18 +34,27 @@ export default function UserDialogBox({
           <p>
             <i>Where do you want to go?</i>
           </p>
-          <p
-            className={classes.hoverPointer}
-            onClick={() => changePlace("military_camp")}
+          <SelectLocation
+            location="military_camp"
+            setDialog={setDialog}
+            setSelectedPlace={setSelectedPlace}
           >
-            &gt; Military Camp
-          </p>
-          <p
-            className={classes.hoverPointer}
-            onClick={() => changePlace("hospital")}
+            Military Camp
+          </SelectLocation>
+          <SelectLocation
+            location="hospital"
+            setDialog={setDialog}
+            setSelectedPlace={setSelectedPlace}
           >
-            &gt; Hospital
-          </p>
+            Hospital
+          </SelectLocation>
+          <SelectLocation
+            location="battlefield"
+            setDialog={setDialog}
+            setSelectedPlace={setSelectedPlace}
+          >
+            Battlefield
+          </SelectLocation>
         </>
       )}
       {selectedPlace === "military_camp" && (
@@ -44,6 +62,7 @@ export default function UserDialogBox({
           setDialog={setDialog}
           selectedPlace={selectedPlace}
           setLoudText={setLoudText}
+          loudText={loudText}
         />
       )}
       {selectedPlace === "hospital" && (
@@ -51,6 +70,22 @@ export default function UserDialogBox({
           setDialog={setDialog}
           selectedPlace={selectedPlace}
           setLoudText={setLoudText}
+          loudText={loudText}
+        />
+      )}
+      {selectedPlace === "battlefield" && (
+        <ListQuestions
+          setDialog={setDialog}
+          selectedPlace={selectedPlace}
+          setLoudText={setLoudText}
+          loudText={loudText}
+          battlefieldProgress={battlefieldProgress}
+          setBattlefieldProgress={setBattlefieldProgress}
+          setAlienHealth={setAlienHealth}
+          setPlayerHealth={setPlayerHealth}
+          setSlienStatus={setSlienStatus}
+          alienHealth={alienHealth}
+          playerHealth={playerHealth}
         />
       )}
     </div>

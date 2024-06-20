@@ -4,6 +4,7 @@ import Image from "next/image";
 import military_camp from "@/public/military_camp.png";
 import hospital from "@/public/hospital.png";
 import field from "@/public/field.png";
+import battlefield from "@/public/empty_road.png";
 
 export default function DisplayBackground({ selectedPlace }) {
   let backgroundImage =
@@ -11,6 +12,8 @@ export default function DisplayBackground({ selectedPlace }) {
       ? military_camp
       : selectedPlace === "hospital"
       ? hospital
+      : selectedPlace === "battlefield"
+      ? battlefield
       : field;
 
   return (

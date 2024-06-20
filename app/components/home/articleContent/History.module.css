@@ -1,4 +1,5 @@
 .historyDiv {
+  width: 100%;
   margin-top: 50px;
   position: relative;
 }
@@ -34,13 +35,18 @@
   width: 30%;
   text-align: left;
 }
-.text h2 {
+.text h2,
+.textMobile h2 {
   font-size: 30px;
   animation: glitch 2s linear infinite;
 }
-.text p {
+.text p,
+.textMobile p {
   font-size: 20px;
   text-indent: 15px;
+}
+.mobileDiv {
+  width: 100%;
 }
 
 @keyframes glitch {
@@ -57,13 +63,16 @@
   }
 }
 .text h2:before,
-.text h2:after {
+.text h2:after,
+.textMobile h2:before,
+.textMobile h2:after {
   content: attr(title);
   position: absolute;
   left: 0;
 }
 
-.text h2:before {
+.text h2:before,
+.textMobile h2:before {
   animation: glitchTop 2s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
@@ -82,7 +91,8 @@
     transform: translate(13px, -1px) skew(-13deg);
   }
 }
-.text h2:after {
+.text h2:after,
+.textMobile h2:after {
   animation: glitchBotom 2.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
@@ -99,5 +109,30 @@
   }
   62% {
     transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .mobileDiv {
+    display: none;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .text {
+    display: none;
+  }
+  .textMobile {
+    margin: 0 auto;
+    width: 90%;
+    padding: 15px;
+  }
+  .historyDiv img {
+    position: absolute;
+    opacity: 0.4;
+  }
+}
+@media screen and (max-width: 550px) {
+  .historyDiv img {
+    display: none;
   }
 }

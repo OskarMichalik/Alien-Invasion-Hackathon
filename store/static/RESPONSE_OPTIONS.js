@@ -47,5 +47,10 @@ const RESPONSE_OPTIONS = [
     id: "loud_text",
     response: "Apologies.",
   },
+  {
+    id: "where_are_we_tutorial",
+    response:
+      "We are on the testing grounds, here you will fight your first alien. Start the battle when you are ready.",
+  },
 ];
 export default RESPONSE_OPTIONS;

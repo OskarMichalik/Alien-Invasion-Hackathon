@@ -28,3 +28,21 @@
   user-select: none;
   -webkit-user-drag: none;
 }
+@media screen and (max-width: 1400px) {
+  .latestUpdateDiv {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .latestUpdateDiv {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .leftDiv {
+    width: 100%;
+  }
+  .rightDiv {
+    display: none;
+  }
+}

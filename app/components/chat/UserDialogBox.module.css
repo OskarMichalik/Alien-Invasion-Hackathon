@@ -1,0 +1,8 @@
+.userDialogBoxDiv {
+  width: max(90%, 300px);
+  height: 300px;
+  margin: 0 auto;
+}
+.hoverPointer {
+  cursor: pointer;
+}

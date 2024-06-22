@@ -21,13 +21,20 @@ export default function UserDialogBox({
     setSelectedPlace(place);
   }
 
+  let displayNameSelectedPlace =
+    selectedPlace === "military_camp"
+      ? "Military camp"
+      : selectedPlace === "hospital"
+      ? "Hospital"
+      : selectedPlace === "battlefield" && "Battlefield";
+
   return (
     <div className={classes.userDialogBoxDiv}>
       <p>
         <span onClick={() => changePlace("")} className={classes.hoverPointer}>
           Field
         </span>
-        {selectedPlace !== "" && ` > ${selectedPlace}`}
+        {selectedPlace !== "" && ` > ${displayNameSelectedPlace}`}
       </p>
       {selectedPlace === "" && (
         <>

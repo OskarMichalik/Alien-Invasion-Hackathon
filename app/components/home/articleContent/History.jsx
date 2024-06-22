@@ -60,6 +60,7 @@ export default function History() {
             and towns. People gathered, mesmerized and terrified. The ships
             descended, releasing drones that hummed with an alien frequency.
           </p>
+          <br />
           <p>
             Governments scrambled, sending messages of diplomacy. They targeted
             military bases, disarming defenses with beams of blinding light.
@@ -75,6 +76,7 @@ export default function History() {
             forces. Survivors had scattered into hidden bunkers and makeshift
             camps, eking out a precarious existence.
           </p>
+          <br />
           <p>
             Amidst the despair, tales of bravery emerged. Stories of daring
             raids to gather supplies from abandoned warehouses or to rescue

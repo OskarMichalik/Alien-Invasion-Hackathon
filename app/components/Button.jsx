@@ -8,11 +8,22 @@ export default function Button({
   link,
   buttonType = "button",
   children,
+  fnOnClick,
+  fnValue,
 }) {
   const router = useRouter();
 
   function changeWebSite(website) {
     router.push(`/${website}`);
+  }
+
+  function clickFn() {
+    changeWebSite(link);
+    if (fnOnClick && fnValue) {
+      fnOnClick(fnValue);
+    } else if (fnOnClick) {
+      fnOnClick();
+    }
   }
   return (
     <motion.button
@@ -20,7 +31,7 @@ export default function Button({
       whileTap={{ scale: 1.1 }}
       type={buttonType}
       className={isEmpty ? classes.empty : classes.full}
-      onClick={() => changeWebSite(link)}
+      onClick={clickFn}
     >
       {children}
     </motion.button>

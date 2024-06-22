@@ -1,0 +1,37 @@
+.mapDiv {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 90vw;
+  aspect-ratio: 2/1;
+}
+.mapDiv h2 {
+  color: black;
+}
+.infoWindowDiv {
+  width: 100%;
+  height: 100%;
+}
+.infoWindowDiv h3 {
+  color: black;
+  font-size: 15px;
+}
+.infoWindowDiv p {
+  color: black;
+}
+.headerText {
+  display: flex;
+  flex-direction: row;
+}
+.headerText h2 {
+  color: black;
+  font-size: 25px;
+  font-weight: 800;
+}
+.spaceTecApprovedDiv {
+  display: flex;
+  align-items: center;
+}
+.spaceTecApprovedDiv h3 {
+  color: #34b4eb;
+  margin-left: 15px;
+}

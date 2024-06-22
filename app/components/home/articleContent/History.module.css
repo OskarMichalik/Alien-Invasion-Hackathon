@@ -112,12 +112,12 @@
   }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1250px) {
   .mobileDiv {
     display: none;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1250px) {
   .text {
     display: none;
   }
@@ -134,5 +134,10 @@
 @media screen and (max-width: 550px) {
   .historyDiv img {
     display: none;
+  }
+}
+@media screen and (max-width: 1500px) and (min-width: 1251px) {
+  .historyDiv {
+    height: 1500px;
   }
 }

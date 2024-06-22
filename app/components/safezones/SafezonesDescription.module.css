@@ -1,4 +1,4 @@
-.spacetecChatDescriptionDiv {
+.safezonesDescriptionDiv {
   margin: 0 auto;
   width: max(80%, 300px);
   margin-top: 100px;
@@ -19,7 +19,7 @@
   text-indent: 15px;
 }
 @media only screen and (max-width: 800px) {
-  .spacetecChatDescriptionDiv {
+  .safezonesDescriptionDiv {
     margin-top: 50px;
   }
 }

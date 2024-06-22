@@ -27,8 +27,16 @@ export default function Banner() {
   const isMobile = displayWidth <= 600;
 
   return (
-    <motion.div className={classes.bannerDiv}>
-      <Image src={isMobile ? bannerImageMobile : bannerImage} alt="UFO" />
+    <motion.div
+      className={classes.bannerDiv}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <Image
+        src={isMobile ? bannerImageMobile : bannerImage}
+        alt="UFO"
+        priority
+      />
       <span className={classes.text}>
         <motion.p
           whileHover={{

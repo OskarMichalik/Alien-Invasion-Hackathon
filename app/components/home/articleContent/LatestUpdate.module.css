@@ -17,6 +17,9 @@
 .leftDiv {
   font-size: 20px;
 }
+.leftDiv p {
+  margin-bottom: 15px;
+}
 .rightDiv {
   width: 25%;
 }

@@ -14,9 +14,7 @@ export default function SpacetecAd() {
           <br />
           Talk to Spacetec soldiers to find solutions for your difficulties.
         </p>
-        <Button isEmpty link="chat">
-          Get help
-        </Button>
+        <Button link="chat">Get help</Button>
       </div>
       <div className={classes.rightDiv}>
         <Image src={spacetec} alt="spacetec" />

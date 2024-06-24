@@ -1,0 +1,52 @@
+.tipsDiv {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 50px;
+  text-align: center;
+}
+.tipsDiv h2 {
+  font-size: 30px;
+}
+.tipsContent {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+.tipsContent svg {
+  width: 25px;
+}
+.tipsContent svg:hover {
+  cursor: pointer;
+  user-select: none;
+}
+.text {
+  width: 90%;
+  height: 50px;
+}
+.tipLegend {
+  color: grey;
+}
+@media screen and (max-width: 1000px) {
+  .text {
+    height: 80px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .tipsDiv {
+    width: 90%;
+  }
+  .text {
+    height: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .text {
+    height: 80px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .text {
+    height: 120px;
+  }
+}

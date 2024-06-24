@@ -10,6 +10,7 @@ export default function Button({
   children,
   fnOnClick,
   fnValue,
+  disabled,
 }) {
   const router = useRouter();
 
@@ -32,6 +33,7 @@ export default function Button({
       type={buttonType}
       className={isEmpty ? classes.empty : classes.full}
       onClick={clickFn}
+      disabled={disabled}
     >
       {children}
     </motion.button>

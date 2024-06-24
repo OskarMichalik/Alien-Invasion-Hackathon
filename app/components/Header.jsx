@@ -8,6 +8,7 @@ import Button from "./Button";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Menu from "./Menu";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const { scrollY } = useScroll();
@@ -22,15 +23,29 @@ export default function Header() {
     }
   }, [menuIsOpen]);
 
+  const pathname = usePathname();
+
   return (
     <motion.div className={classes.headerDiv} style={{ y: yValue }}>
       <Link href="/" as="/">
-        <Image src={logo} alt="Alien logo" />
+        <Image src={logo} alt="Alien logo" as="/" priority />
       </Link>
       <div className={classes.navigationButtons}>
-        <Button link="">Home</Button>
-        <Button link="safezones">Safezones</Button>
-        <Button link="chat" isEmpty>
+        <Button link="" isEmpty={pathname === "/"} disabled={pathname === "/"}>
+          Home
+        </Button>
+        <Button
+          link="safezones"
+          isEmpty={pathname === "/safezones"}
+          disabled={pathname === "/safezones"}
+        >
+          Safezones
+        </Button>
+        <Button
+          link="chat"
+          isEmpty={pathname === "/chat"}
+          disabled={pathname === "/chat"}
+        >
           Get Help
         </Button>
       </div>
@@ -39,6 +54,7 @@ export default function Header() {
           <Menu
             onClose={() => setMenuIsOpen(false)}
             setMenuIsOpen={setMenuIsOpen}
+            pathname={pathname}
           />
         )}
       </AnimatePresence>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import classes from "./Menu.module.css";
 import Button from "./Button";
 
-export default function Menu({ onClose, setMenuIsOpen }) {
+export default function Menu({ onClose, setMenuIsOpen, pathname }) {
   return (
     <div className={classes.menu}>
       <motion.div
@@ -37,13 +37,31 @@ export default function Menu({ onClose, setMenuIsOpen }) {
             bounce: 0.05,
           }}
         >
-          <Button link="" fnOnClick={setMenuIsOpen} fnValue={false}>
+          <Button
+            link=""
+            fnOnClick={setMenuIsOpen}
+            fnValue={false}
+            isEmpty={pathname === "/"}
+            disabled={pathname === "/"}
+          >
             Home
           </Button>
-          <Button link="safezones" fnOnClick={setMenuIsOpen} fnValue={false}>
+          <Button
+            link="safezones"
+            fnOnClick={setMenuIsOpen}
+            fnValue={false}
+            isEmpty={pathname === "/safezones"}
+            disabled={pathname === "/safezones"}
+          >
             Safezones
           </Button>
-          <Button link="chat" isEmpty fnOnClick={setMenuIsOpen} fnValue={false}>
+          <Button
+            link="chat"
+            fnOnClick={setMenuIsOpen}
+            fnValue={false}
+            isEmpty={pathname === "/chat"}
+            disabled={pathname === "/chat"}
+          >
             Get Help
           </Button>
         </motion.div>

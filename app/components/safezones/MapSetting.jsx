@@ -59,23 +59,24 @@ export default function MapSetting() {
                 onClose={() => setWhichIsOpen("")}
                 className={classes.infoWindow}
                 maxWidth={500}
+                minWidth={300}
                 headerContent={
                   <div className={classes.headerText}>
                     <h2>{element.name}</h2>
-                    {element.spaceTecApproved && (
+                    {/*element.spaceTecApproved && (
                       <div className={classes.spaceTecApprovedDiv}>
                         <h3>SpaceTec approved</h3>
                       </div>
-                    )}
+                    )*/}
                   </div>
                 }
               >
                 <div className={classes.infoWindowDiv}>
-                  {/*element.spaceTecApproved && (
+                  {element.spaceTecApproved && (
                     <div className={classes.spaceTecApprovedDiv}>
                       <h3>&gt; SpaceTec approved</h3>
                     </div>
-                  )*/}
+                  )}
                   <p>{element.description}</p>
                 </div>
               </InfoWindow>

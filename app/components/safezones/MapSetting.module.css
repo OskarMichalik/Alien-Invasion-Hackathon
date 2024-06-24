@@ -33,5 +33,15 @@
 }
 .spaceTecApprovedDiv h3 {
   color: #34b4eb;
-  margin-left: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .mapDiv {
+    aspect-ratio: 1/1;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .mapDiv {
+    aspect-ratio: 1/2;
+  }
 }

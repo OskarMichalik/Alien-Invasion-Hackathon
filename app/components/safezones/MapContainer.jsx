@@ -1,14 +1,15 @@
 "use client";
-import classes from "./MapContainer.module.css";
 import { APIProvider } from "@vis.gl/react-google-maps";
 import MapSetting from "./MapSetting";
+import MapLegend from "./MapLegend";
 
 export default function MapContainer() {
   return (
-    <div className={classes.mapDiv}>
+    <div>
       <APIProvider apiKey={process.env.API_KEY}>
         <MapSetting />
       </APIProvider>
+      <MapLegend />
     </div>
   );
 }

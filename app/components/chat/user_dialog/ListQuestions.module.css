@@ -1,0 +1,22 @@
+.questionsDiv {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.hoverPointer {
+  cursor: pointer;
+  user-select: auto;
+  -webkit-user-drag: none;
+}
+@media screen and (max-width: 1200px) {
+  .questionsDiv {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .questionsDiv {
+    height: 500px;
+  }
+}

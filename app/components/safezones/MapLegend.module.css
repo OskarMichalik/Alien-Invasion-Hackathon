@@ -1,0 +1,19 @@
+.mapLegendDiv {
+  padding-top: 25px;
+  width: 90vw;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 10px;
+}
+.legendLine {
+  display: flex;
+  align-items: center;
+}
+.legendLine img {
+  width: 15px;
+}
+.legendLine span {
+  margin-left: 15px;
+}

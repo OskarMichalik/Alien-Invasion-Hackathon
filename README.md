@@ -11,7 +11,8 @@
 ## Safezones:
 
     Description     - Tells a little bit of story about the map and why it was created
-    Map             - Shows safezones and danger zones in the city of Austin, you can click on the pins to see descriptions about the safezones
+    Map             - Shows safezones and danger zones in the city of Austin,
+                    you can click on the pins to see descriptions about the safezones
     Legend          - Under the map you can see the legend, which describes the different symbols from the map
 
 ## ChatBot:

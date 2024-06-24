@@ -35,10 +35,12 @@
   width: 30%;
   text-align: left;
 }
-.text h2,
-.textMobile h2 {
+.text h2 {
   font-size: 30px;
   animation: glitch 2s linear infinite;
+}
+.textMobile h2 {
+  font-size: 30px;
 }
 .text p,
 .textMobile p {
@@ -63,19 +65,27 @@
   }
 }
 .text h2:before,
-.text h2:after,
-.textMobile h2:before,
-.textMobile h2:after {
+.text h2:after {
   content: attr(title);
   position: absolute;
   left: 0;
 }
 
-.text h2:before,
-.textMobile h2:before {
+.text h2:before {
   animation: glitchTop 2s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
+  gap: 10px;
+}
+.title svg {
+  width: 25px;
+  height: 25px;
 }
 
 @keyframes glitchTop {
@@ -91,8 +101,7 @@
     transform: translate(13px, -1px) skew(-13deg);
   }
 }
-.text h2:after,
-.textMobile h2:after {
+.text h2:after {
   animation: glitchBotom 2.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);

@@ -1,0 +1,75 @@
+.responseBoxDiv {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.responseBoxDiv p {
+  width: 100%;
+  padding: 15px;
+}
+.hoverPointer {
+  cursor: pointer;
+}
+.responseBoxDivLoud {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.responseBoxDivLoud p {
+  width: 100%;
+  padding: 15px;
+  color: black !important;
+}
+.responseBoxDivLoud p span {
+  color: black !important;
+}
+.battleDiv,
+.battleDivLoud {
+  width: max(300px, 60%);
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.battleDivLoud .characterHealth,
+.battleDivLoud .alienStatus {
+  color: black !important;
+}
+.healthStatus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+.alienStatus {
+  text-align: center;
+}
+.characterInfo {
+  display: flex;
+  flex-direction: row;
+}
+.healthBar {
+  width: 150px;
+  background-color: #bbbbbbbb;
+  margin-left: 5px;
+}
+.healthBarValue {
+  height: 100%;
+  background-color: #00bb00;
+}
+.score,
+.scoreLoud {
+  text-align: center;
+}
+.scoreLoud p {
+  color: black !important;
+}
+.characterHealth {
+  width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .healthStatus {
+    flex-direction: column;
+  }
+}

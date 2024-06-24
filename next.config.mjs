@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  env: {
+    MAP_ID: process.env.MAP_ID,
+    API_KEY: process.env.API_KEY,
+  },
+};
 
 export default nextConfig;

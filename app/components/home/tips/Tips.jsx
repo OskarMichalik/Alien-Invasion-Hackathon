@@ -1,23 +1,48 @@
 "use client";
 import classes from "./Tips.module.css";
 import TIPS from "@/store/static/TIPS";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Tips() {
   const [tipNumber, setTipNumber] = useState(0);
   const [leftArrow, setLeftArrow] = useState(false);
   const [rightArrow, setRightArrow] = useState(false);
+  var timeoutRef = useRef(null);
 
   function changeNumber(value) {
-    if (value === -1 && tipNumber === 0) {
-      setTipNumber(TIPS.length - 1);
-    } else if (value === 1 && tipNumber === TIPS.length - 1) {
-      setTipNumber(0);
-    } else {
-      setTipNumber((prev) => prev + value);
+    clearExistingTimeout();
+
+    setTipNumber((prev) => {
+      if (value === -1 && prev === 0) {
+        return TIPS.length - 1;
+      } else if (value === 1 && prev === TIPS.length - 1) {
+        return 0;
+      } else {
+        return prev + value;
+      }
+    });
+  }
+  function clearExistingTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
   }
+
+  useEffect(() => {
+    const changeNumberAutomatic = () => {
+      timeoutRef.current = setTimeout(() => {
+        changeNumber(1);
+      }, 5000);
+    };
+
+    changeNumberAutomatic();
+
+    return () => {
+      clearExistingTimeout();
+    };
+  }, [tipNumber]);
+
   return (
     <div className={classes.tipsDiv}>
       <h2>Tips for surviving</h2>
@@ -181,5 +206,3 @@ export default function Tips() {
     </div>
   );
 }
-/*
- */
